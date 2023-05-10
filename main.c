@@ -27,4 +27,14 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         exit(EXIT_FAILURE);
     }
+    while ((nread = getline(&line, &len, file)) != -1)
+    {
+        line_number++;
+        instruction = get_instruction(line, line_number);
+        instruction.f(&stack, line_number);
+    }
+    fclose(file);
+    if (line)
+        free(line);
+    exit(EXIT_SUCCESS);
 }
