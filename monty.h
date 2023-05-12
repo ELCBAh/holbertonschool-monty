@@ -39,6 +39,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct GlobalVariables - The global variables to be free
+ * @file: Descriptor of the Monty file
+ * @opcode: The command to take from the Monty file
+ */
+struct GlobalVariables
+{
+	FILE *file;
+	char *opcode;
+} file_opcode;
+
 
 /* Monty functions prototypes*/
 void pall(stack_t **stack, unsigned int line_number);

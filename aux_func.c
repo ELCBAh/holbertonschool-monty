@@ -28,7 +28,7 @@ void opcomp(stack_t **stack, unsigned int line_number, char *opcode)
 		index++;
 	}
 	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, opcode);
-	free_stack(*stack);
+	exit_free(stack, file_opcode.opcode, file_opcode.file);
 	exit(EXIT_FAILURE);
 }
 

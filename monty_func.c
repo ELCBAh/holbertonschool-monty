@@ -14,6 +14,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!tok || !is_number(tok))
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
+		exit_free(stack, file_opcode.opcode, file_opcode.file);
 		exit(EXIT_FAILURE);
 	}
 
@@ -24,6 +25,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		exit_free(stack, file_opcode.opcode, file_opcode.file);
 		exit(EXIT_FAILURE);
 	}
 
@@ -69,6 +71,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		exit_free(stack, file_opcode.opcode, file_opcode.file);
 		exit(EXIT_FAILURE);
 	}
 	else
