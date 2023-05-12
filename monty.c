@@ -13,11 +13,9 @@
 int main(int argc, char **argv)
 {
 	stack_t *stack = NULL;
-	/*FILE *file;*/
 	char *line = NULL;
 	size_t len = 0;
-	int line_number = 0;
-	/*char *opcode;*/
+	int line_number = 1;
 
 	/* Check arguments */
 	if (argc != 2)
