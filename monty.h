@@ -55,6 +55,8 @@ struct GlobalVariables
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 
 /* Auxiliar functions prototypes*/
 void opcomp(stack_t **stack, unsigned int line_number, char *opcode);
