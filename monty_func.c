@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node = NULL;
 	int n = 0;
 
-	if (!tok || !is_number(tok))
+	if (!tok || !is_number(tok) || *tok == '-')
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit_free(stack, file_opcode.opcode, file_opcode.file);
