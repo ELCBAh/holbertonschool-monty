@@ -9,11 +9,14 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	char *tok = strtok(NULL, " ");
 	stack_t *new_node = NULL;
-	int n = 0;
+	int n = atoi(tok), i = 0, alph = 0;
 
-	n = atoi(tok);
+	if (*tok)
+		for (i = 1; tok[i]; i++)
+			if (isalpha(tok[i]))
+				alph = 1;
 
-	if (!tok || !is_number(tok))
+	if (!tok || !is_number(tok) || alph == 1)
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit_free(stack, file_opcode.opcode, file_opcode.file);
@@ -21,7 +24,6 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	new_node = malloc(sizeof(stack_t));
-
 	if (!new_node)
 	{
 		dprintf(STDERR_FILENO, "Error: malloc failed\n");
@@ -31,7 +33,6 @@ void push(stack_t **stack, unsigned int line_number)
 
 	new_node->n = n;
 	new_node->prev = NULL;
-
 	if (!*stack)
 		new_node->next = NULL;
 	else
