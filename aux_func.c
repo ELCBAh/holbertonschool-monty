@@ -85,3 +85,4 @@ bool is_number(const char *str)
 
 	return (false);
 }
+

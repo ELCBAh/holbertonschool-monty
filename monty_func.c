@@ -7,18 +7,18 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	char *tok = strtok(NULL, " \t\n");
+	char *tok = strtok(NULL, " ");
 	stack_t *new_node = NULL;
 	int n = 0;
 
-	if (!tok || !is_number(tok) || *tok == '-')
+	n = atoi(tok);
+
+	if (!tok || !is_number(tok))
 	{
 		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 		exit_free(stack, file_opcode.opcode, file_opcode.file);
 		exit(EXIT_FAILURE);
 	}
-
-	n = atoi(tok);
 
 	new_node = malloc(sizeof(stack_t));
 

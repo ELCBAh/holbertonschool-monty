@@ -60,7 +60,7 @@ void nop(stack_t **stack, unsigned int line_number);
 
 /* Auxiliar functions prototypes*/
 void opcomp(stack_t **stack, unsigned int line_number, char *opcode);
-bool is_number(char *str);
+bool is_number(const char *str);
 void exit_free(stack_t **stack, char *line, FILE *file);
 void free_stack(stack_t *stack);
 
