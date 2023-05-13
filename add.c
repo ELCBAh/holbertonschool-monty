@@ -13,14 +13,13 @@ void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 
-	tmp = *stack;
-
-	if (tmp->next == NULL) /*checks if there are at least 2  elements*/
+	if (!stack || !*stack || !(*stack)->next) /*checks if there are at least 2  elements*/
 	{
 		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
+	tmp = *stack;
 	tmp = tmp->next; /*2nd value to add*/
 	tmp->n += (*stack)->n; /*adds the values*/
 	tmp->prev = NULL; /*deletes last value of stack*/
