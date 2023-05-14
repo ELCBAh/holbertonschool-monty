@@ -17,6 +17,8 @@ void opcomp(stack_t **stack, unsigned int line_number, char *opcode)
 		{"pint", pint},
 		{"add", add},
 		{"nop", nop},
+		{"pop", pop},
+		{"swap", swap
 		{NULL, NULL},
 	};
 
