@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pop - removes the top element of the stack
+ * pop - initializes prototype
  * 
  * @stack: the stack to modify
  * 

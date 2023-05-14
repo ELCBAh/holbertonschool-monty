@@ -19,6 +19,7 @@ void opcomp(stack_t **stack, unsigned int line_number, char *opcode)
 		{"nop", nop},
 		{"pop", pop},
 		{"swap", swap},
+		{"sub", sub},
 		{NULL, NULL},
 	};
 

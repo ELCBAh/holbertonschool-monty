@@ -1,5 +1,14 @@
 #include "monty.h"
-
+/**
+ * swap - initializes prototype
+ * 
+ * @stack: the stack to be modified
+ * 
+ * @line_number: number of the line to find the opcode
+ * 
+ * Description: swaps the top two elements of the stack
+ * 
+*/
 void swap(stack_t **stack, unsigned int line_number)
 {
     stack_t *tmp;
